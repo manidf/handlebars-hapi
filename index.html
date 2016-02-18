@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="mdl-js">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,9 +9,11 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <div id="main" class="mdl-layout mdl-js-layout mdl-layout--fixed-header"></div>
+
+  <script language="text/x-handlebars-template id="index-template">
         <div class="mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
                 <a class="site-title">
@@ -143,12 +144,13 @@
                 </div>
             </footer>
         </div>
-    </div>
+    </script>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/handlebars/handlebars.min.js"></script>
     <script src="bower_components/material-design-lite/material.min.js"></script>
     <script src="js/dogPack.js"></script>
     <script src="js/app.js"></script>
-</body>
 
+</body>
 </html>
