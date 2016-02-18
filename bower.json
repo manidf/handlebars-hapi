@@ -1,0 +1,23 @@
+{
+  "name": "pluralsight-handlebars-starter-code",
+  "homepage": "https://github.com/ryanmurakami/pluralsight-handlebars-starter-code",
+  "authors": [
+    "manidf <mannuel.ferreira@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "handlebars": "v3.0.3",
+    "material-design-lite": "~1.1.1"
+  }
+}
