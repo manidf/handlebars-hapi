@@ -10,15 +10,13 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-
   <div id="main" class="mdl-layout mdl-js-layout mdl-layout--fixed-header"></div>
-
-  <script language="text/x-handlebars-template id="index-template">
-        <div class="mdl-layout__header mdl-layout__header--waterfall">
+  <script language="text/x-handlebars-template">
+        <div id="index-template" class="mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
                 <a class="site-title">
                   <span class="mdl-layout-title">
-										dog or not?
+										{{siteTitle}}
 									</span>
                 </a>
                 <!-- Add spacer, to align navigation to the right in desktop -->
@@ -26,9 +24,9 @@
                 <!-- Navigation -->
                 <div>
                     <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=dogs">Dogs</a>
-                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=not_dogs">Not Dogs</a>
-                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=maybe_dogs">Maybe Dogs</a>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=dogs">{{dogsFilter}}</a>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=not_dogs">{{notDogsFilter}}</a>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=maybe_dogs">{{incompleteFilter}}</a>
                     </nav>
                 </div>
             </div>
@@ -42,13 +40,13 @@
         </div>
         <div id="languageSwitch">
           <button class="mdl-button">
-            dog?
+            {{languageFilter}}
           </button>
         </div>
         <div class="mdl-layout__content">
             <a name="top"></a>
             <div class="mdl-typography--text-center">
-                <h1>dog or not?</h1>
+                <h1>{{siteTitle}}</h1>
             </div>
             <div id="theDogs">
                 <div class="mdl-card mdl-shadow--2dp dog-card" data-dog-id="goofy">
@@ -145,12 +143,10 @@
             </footer>
         </div>
     </script>
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/handlebars/handlebars.min.js"></script>
     <script src="bower_components/material-design-lite/material.min.js"></script>
     <script src="js/dogPack.js"></script>
     <script src="js/app.js"></script>
-
 </body>
 </html>
