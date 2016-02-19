@@ -1,3 +1,4 @@
+
 (function () {
 	var dh = {};
 
@@ -239,4 +240,5 @@
 
 	window.language = dh.initLanguages();
 	window.DogPack = dh;
+
 })();
