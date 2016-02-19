@@ -1,15 +1,16 @@
+(function () {
+	renderPage();
 
-(function() {
-  renderPage();
+	function renderPage() {
 
-  function renderPage() {
-    var template = $('#index-template').html(),
-        compiled = Handlebars.compile(template),
-        rendered = compiled(window.language);
-    $('#main').html(rendered);
-  }
+		var template = $('#index-template').html();
+		var compiled = Handlebars.compile(template);
+		var rendered = compiled(window.language);
 
-  $('#languageSwitch').click(function () {
-    DogPack.switchLanguage();
-  });
+		$('#main').html(rendered);
+	}
+
+	$('#languageSwitch').click(function () {
+		DogPack.switchLanguage();
+	});
 })();
