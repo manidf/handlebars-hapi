@@ -85,7 +85,7 @@
 		this.isCorrect = function () {
 			return (this.chosen === 'dog' && this.isDog) ||
 				(this.chosen === 'not dog' && !this.isDog);
-		}
+		};
 		return this;
 	}
 
