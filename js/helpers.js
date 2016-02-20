@@ -4,3 +4,17 @@ Handlebars.registerHelper('isChosen', function(type) {
 		return 'mdl-button--colored';
 	}
 });
+
+
+
+Handlebars.registerHelper('getLanguageFilter', function(langId) {
+
+	var queryParam = {};
+
+	if (langId) {
+		queryParam = '&language=' + langId;
+	}
+
+	return queryParam;
+
+});
