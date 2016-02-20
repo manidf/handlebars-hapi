@@ -9,12 +9,12 @@ Handlebars.registerHelper('isChosen', function(type) {
 
 Handlebars.registerHelper('getLanguageFilter', function(langId) {
 
-	var queryParam = {};
+	var queryParam = '';
 
 	if (langId) {
-		queryParam = '&language=' + langId;
+		queryParae = '&language=' + Handlebars.escapeExpression(langId);
 	}
 
-	return queryParam;
+	return new Handlebars.SafeString(queryParam);
 
 });

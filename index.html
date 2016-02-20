@@ -24,10 +24,10 @@
 			<!-- Navigation -->
 			<div>
 				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=dogs">{{dogsFilter}}</a>
-					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=not_dogs">{{notDogsFilter}}</a>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=dogs{{getLanguageFilter langId}}">{{dogsFilter}}</a>
+					<a class="mdl-navigation__link mdl-typography--text-uppercase" href="?filter=not_dogs{{getLanguageFilter langId}}">{{notDogsFilter}}</a>
 					<a class="mdl-navigation__link mdl-typography--text-uppercase"
-						 href="?filter=maybe_dogs">{{incompleteFilter}}</a>
+						 href="?filter=maybe_dogs{{getLanguageFilter langId}}">{{incompleteFilter}}</a>
 				</nav>
 			</div>
 		</div>
@@ -54,12 +54,7 @@
 
 		</div>
 		<div id="pagination">
-			<ul>
-				<li><a href="index.html">1</a></li>
-				<li><a href="page2.html">2</a></li>
-				<li><a href="page3.html">3</a></li>
-				<li><a href="page4.html">4</a></li>
-			</ul>
+
 		</div>
 		<footer class="mdl-mega-footer">
 			<div class="mdl-mega-footer--top-section">
@@ -96,6 +91,13 @@
 		{{/if}}
 		{{/if}}
 	</div>
+</script>
+<script language="text/x-handlebars-template" id="page-template">
+	<ul>
+		{{#each (generatePages dogs)}}
+		<li><a href="{{link}}">{{number}}</a></li>
+		{{/each}}
+	</ul>
 </script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/handlebars/handlebars.min.js"></script>
