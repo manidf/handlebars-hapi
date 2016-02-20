@@ -29,6 +29,21 @@
 		$('#theDogs').html(rendered);
 		attachDogsButton();
 		renderPages(filteredDogs);
+		renderScore();
+	}
+
+	function renderScore() {
+		var template = $('#score-template').html();
+		var compiled = Handlebars.compile(template);
+		var rendered = compiled({
+			dogs: DogPack.dogs,
+			language: window.language
+		});
+		$('#score').html(rendered);
+		$('#score').find('small').click(function() {
+			DogPack.clearDogs();
+			window.location.href = '?' + Handlebars.helpers.getLanguageFilter(window.language.langId);
+		});
 	}
 
 	function renderPages(dogs) {

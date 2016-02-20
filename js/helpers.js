@@ -5,8 +5,6 @@ Handlebars.registerHelper('isChosen', function(type) {
 	}
 });
 
-
-
 Handlebars.registerHelper('getLanguageFilter', function(langId) {
 	var queryParam = '';
 	if (langId) {
@@ -29,4 +27,14 @@ Handlebars.registerHelper('generatePages', function(dogs) {
 		return pages;
 	}
 
+});
+
+Handlebars.registerHelper('generateScore', function(context, options) {
+	var score = DogPack.scoreDogs(context);
+	return options.fn({
+		correct: score.correct,
+		incorrect: score.correct,
+		incomplete: score.incomplete,
+		language: options.hash.language
+	});
 });

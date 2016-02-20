@@ -32,14 +32,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="score">
-		<button class="mdl-button">
-			0 correct |
-			0 incorrect |
-			22 incomplete
-			<small>Reset?</small>
-		</button>
-	</div>
+	<div id="score"> </div>
 	<div id="languageSwitch">
 		<button class="mdl-button">
 			{{languageFilter}}
@@ -50,12 +43,8 @@
 		<div class="mdl-typography--text-center">
 			<h1>{{siteTitle}}</h1>
 		</div>
-		<div id="theDogs">
-
-		</div>
-		<div id="pagination">
-
-		</div>
+		<div id="theDogs"> </div>
+		<div id="pagination"> </div>
 		<footer class="mdl-mega-footer">
 			<div class="mdl-mega-footer--top-section">
 				<p class="mdl-typography--font-light">© 2015 Ryan Lewis</p>
@@ -95,9 +84,19 @@
 <script language="text/x-handlebars-template" id="page-template">
 	<ul>
 		{{#each (generatePages dogs)}}
-		<li><a href="{{link}}">{{number}}</a></li>
+			<li><a href="{{link}}">{{number}}</a></li>
 		{{/each}}
 	</ul>
+</script>
+<script language="text/x-handlebars" id="score-template">
+	<button class="mdl-button">
+		{{#generateScore dogs language=language}}
+			{{correct}} {{language.correct}} |
+			{{incorrect}} {{language.incorrect}} |
+			{{incomplete}} {{language.incomplete}}
+		{{/generateScore}}
+		<small>Reset?</small>
+	</button>
 </script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/handlebars/handlebars.min.js"></script>
