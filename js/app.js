@@ -19,15 +19,25 @@
 	function renderDogs() {
 		var template = $('#dogs-template').html();
 		var compiled = Handlebars.compile(template);
-		var filteredDogs = DogPack.getFileredDogs(DogPack.dogs);
+		var filteredDogs = DogPack.getFilteredDogs(DogPack.dogs);
 
 		var rendered = compiled({
-			dogs: DogPack.getPaginatedDogs(filterDogs),
+			dogs: DogPack.getPaginatedDogs(filteredDogs),
 			language: window.language
 		});
 
 		$('#theDogs').html(rendered);
 		attachDogsButton();
+		renderPages(filteredDogs);
+	}
+
+	function renderPages(dogs) {
+		var template = $('#page-template').html();
+		var compiled = Handlebars.compile(template);
+		var rendered = compiled({
+			dogs: dogs
+		});
+		$('#pagination').html(rendered);
 	}
 
 	function attachDogsButton() {
