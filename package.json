@@ -5,8 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-declare": "^0.3.0",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-wrap": "^0.11.0",
     "hapi": "^8.8.1",
-    "hapi-auth-cookie": "^2.2.0"
+    "hapi-auth-cookie": "^2.2.0",
+    "merge-stream": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
