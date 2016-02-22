@@ -1,0 +1,5 @@
+{{#each dogs}}
+	{{> dog language=@root.language}}
+{{else}}
+	{{language.noDogsMessage}}
+{{/each}}

@@ -4,6 +4,7 @@
   "description": "This repository contains the starter code for the [JavaScript Templating with Handlebars course on Pluralsight.com](http://www.pluralsight.com/courses/handlebars-javascript-templating).",
   "main": "index.js",
   "dependencies": {
+    "gulp": "^3.9.1",
     "hapi": "^8.8.1",
     "hapi-auth-cookie": "^2.2.0"
   },
