@@ -7,7 +7,7 @@ gulp.task('watch', watch);
 gulp.task('templates', templates);
 
 gulp.task('debug', function () {
-	return gulp.src('./**/*.js')
+	return gulp.src('./*.js')
 		.pipe(debug({
 			title: 'templates'
 		}))
