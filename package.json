@@ -6,6 +6,7 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
     "gulp-declare": "^0.3.0",
     "gulp-handlebars": "^4.0.0",
     "gulp-wrap": "^0.11.0",
