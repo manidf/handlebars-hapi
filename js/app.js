@@ -1,27 +1,17 @@
 
 (function () {
 
-	registerPartial();
 	renderPage();
 	renderDogs();
 
-	function registerPartial() {
-		Handlebars.registerPartial('dog', $('#dog-template').html());
-	}
-
 	function renderPage() {
-		var template = $('#index-template').html();
-		var compiled = Handlebars.compile(template);
-		var rendered = compiled(window.language);
+		var rendered = App.templates.index(window.language);
 		$('#main').html(rendered);
 	}
 
 	function renderDogs() {
-		var template = $('#dogs-template').html();
-		var compiled = Handlebars.compile(template);
 		var filteredDogs = DogPack.getFilteredDogs(DogPack.dogs);
-
-		var rendered = compiled({
+		var rendered = App.templates.dogs({
 			dogs: DogPack.getPaginatedDogs(filteredDogs),
 			language: window.language
 		});
@@ -33,9 +23,7 @@
 	}
 
 	function renderScore() {
-		var template = $('#score-template').html();
-		var compiled = Handlebars.compile(template);
-		var rendered = compiled({
+		var rendered = App.templates.score({
 			dogs: DogPack.dogs,
 			language: window.language
 		});
@@ -47,9 +35,7 @@
 	}
 
 	function renderPages(dogs) {
-		var template = $('#page-template').html();
-		var compiled = Handlebars.compile(template);
-		var rendered = compiled({
+		var rendered = App.templates.page({
 			dogs: dogs
 		});
 		$('#pagination').html(rendered);

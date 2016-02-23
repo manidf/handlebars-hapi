@@ -11,31 +11,28 @@ module.exports = function() {
 	var partials = gulp.src('./templates/_*.hbs')
 		// handlebars
 		.pipe(handlebars())
-		// wrap incoming content in some text,
-		// 1. create Handlebars.register partial function that takes a token as an arg that will call a function
-		// 2. take the contents of the string which gets precompiled template from handle bars plugin.
-		// 1st arg = Handlebars.register with 2 args; 2nd arg = empty data obj literal; 3rd arg = an options obj used to pass in the filename;
-		.pipe(wrap('Handlebars.registerPartial(<%= processPartialName(file.relative) %>, Handlebars.template(<%= contents %>));', {}, {
+		// wrap inline javascript
+		.pipe('Handlebars.registerPartial(<%= processPartialName(file.relative) %>, Handlebars.template(<%= content %>));', {}, {
 			imports: {
 				processPartialName: function(fileName) {
-					return JSON.stringify(path.basename(fileName, '.js').substr(1)); //removes underscore from partial name
+					return JSON.stringify(path.basename(fileName, '.js').substr(1));
 				}
 			}
-		}));
+		});
 
 	// template stream : get all the templates that do not hae the underscore
 	var templates = gulp.src('./templates/[^_]*.hbs')
 		// handlebars
 		.pipe(handlebars())
 		// wrap
-		.pipe(wrap('Handlebars.template(<%= contents %>)'))
+		.pipe(wrap('Handlebars.template<%= contents %>'))
 		// namepace
 		.pipe(declare({
 			namespace: 'App.templates',
 			noRedeclare: true
 		}));
 
-	// run merge: pass in partials and templates
+	// run merge : pass in partials and templates
 	return merge(partials, templates)
 		// concat
 		.pipe(concat('templates.js'))

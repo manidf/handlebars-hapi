@@ -1,6 +1,6 @@
 this["App"] = this["App"] || {};
 this["App"]["templates"] = this["App"]["templates"] || {};
-this["App"]["templates"]["dogs"] = Handlebars.template{"1":function(depth0,helpers,partials,data) {
+this["App"]["templates"]["dogs"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
     var stack1;
 
   return ((stack1 = this.invokePartial(partials.dog,depth0,{"name":"dog","hash":{"language":((stack1 = (data && data.root)) && stack1.language)},"data":data,"indent":"\t","helpers":helpers,"partials":partials})) != null ? stack1 : "");
@@ -14,7 +14,7 @@ this["App"]["templates"]["dogs"] = Handlebars.template{"1":function(depth0,helpe
     var stack1;
 
   return ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.dogs : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.program(3, data, 0),"data":data})) != null ? stack1 : "");
-},"usePartial":true,"useData":true};
+},"usePartial":true,"useData":true});
 Handlebars.registerPartial("dog", Handlebars.template({"1":function(depth0,helpers,partials,data) {
     var stack1;
 
@@ -52,7 +52,7 @@ Handlebars.registerPartial("dog", Handlebars.template({"1":function(depth0,helpe
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.chosen : depth0),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</div>\n";
 },"useData":true}));
-this["App"]["templates"]["index"] = Handlebars.template{"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+this["App"]["templates"]["index"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
   return "<div class=\"mdl-layout__header mdl-layout__header--waterfall\">\n  <div class=\"mdl-layout__header-row\">\n    <a class=\"site-title\">\n				<span class=\"mdl-layout-title\">\n					"
@@ -73,9 +73,9 @@ this["App"]["templates"]["index"] = Handlebars.template{"compiler":[6,">= 2.0.0-
     + alias3(((helper = (helper = helpers.languageFilter || (depth0 != null ? depth0.languageFilter : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"languageFilter","hash":{},"data":data}) : helper)))
     + "\n  </button>\n</div>\n<div class=\"mdl-layout__content\">\n  <a name=\"top\"></a>\n  <div class=\"mdl-typography--text-center\">\n    <h1>"
     + alias3(((helper = (helper = helpers.siteTitle || (depth0 != null ? depth0.siteTitle : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"siteTitle","hash":{},"data":data}) : helper)))
-    + "</h1>\n  </div>\n  <div id=\"theDogs\"> </div>\n  <div id=\"pagination\"> </div>\n  <footer class=\"mdl-mega-footer\">\n    <div class=\"mdl-mega-footer--top-section\">\n      <p class=\"mdl-typography--font-light\">© 2015 Ryan Lewis</p>\n    </div>\n  </footer>\n</div>\n";
-},"useData":true};
-this["App"]["templates"]["page"] = Handlebars.template{"1":function(depth0,helpers,partials,data) {
+    + "</h1>\n  </div>\n  <div id=\"theDogs\"> </div>\n  <div id=\"pagination\"> </div>\n  <footer class=\"mdl-mega-footer\">\n    <div class=\"mdl-mega-footer--top-section\">\n      <p class=\"mdl-typography--font-light\">© 2016 Ryan Lewis.</p>\n    </div>\n  </footer>\n</div>\n";
+},"useData":true});
+this["App"]["templates"]["page"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
     var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
   return "    <li><a href=\""
@@ -89,8 +89,8 @@ this["App"]["templates"]["page"] = Handlebars.template{"1":function(depth0,helpe
   return "<ul>\n"
     + ((stack1 = helpers.each.call(depth0,(helpers.generatePages || (depth0 && depth0.generatePages) || helpers.helperMissing).call(depth0,(depth0 != null ? depth0.dogs : depth0),{"name":"generatePages","hash":{},"data":data}),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</ul>\n";
-},"useData":true};
-this["App"]["templates"]["score"] = Handlebars.template{"1":function(depth0,helpers,partials,data) {
+},"useData":true});
+this["App"]["templates"]["score"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
     var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression, alias4=this.lambda;
 
   return "		"
@@ -112,4 +112,4 @@ this["App"]["templates"]["score"] = Handlebars.template{"1":function(depth0,help
   return "<button class=\"mdl-button\">\n"
     + ((stack1 = (helpers.generateScore || (depth0 && depth0.generateScore) || helpers.helperMissing).call(depth0,(depth0 != null ? depth0.dogs : depth0),{"name":"generateScore","hash":{"language":(depth0 != null ? depth0.language : depth0)},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "  <small>Reset?</small>\n</button>\n";
-},"useData":true};
+},"useData":true});

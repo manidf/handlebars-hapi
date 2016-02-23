@@ -12,7 +12,8 @@
     "gulp-wrap": "^0.11.0",
     "hapi": "^8.8.1",
     "hapi-auth-cookie": "^2.2.0",
-    "merge-stream": "^1.0.0"
+    "merge-stream": "^1.0.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
